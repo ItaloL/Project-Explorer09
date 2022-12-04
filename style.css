@@ -5,7 +5,7 @@
 }
 
 :root{
-    font-size: 62,5%;
+    font-size: 62.5%;
 
     --hue: 250;
 
@@ -20,45 +20,34 @@
 }
 
 body{
+    min-width: 384px;
     font-size: 1.6rem;
-    font-family: 'Staatliches', cursive;
-    background-color: var(--bc-secondary);
-}
-
-.page{
-    max-width: clamp(39.4rem, 30rem + 80vw, 200rem);
-    margin: 0 auto;
     text-align: center;
-}
-
-img{
-    width: 100%;
-    height: auto;
+    font-family: 'Staatliches', cursive;
+    background-color: var(--bc-secondary)
 }
 
 header{
     background-color: var(--bc--primary);
-    text-align: center;
     padding: 3.2rem 0 2.9rem;
 }
 
 header img{
     width: 13.7rem;
-    height: auto;
+    height: 13.7rem;
 }
 
 header h1{
-    width: 100%;
+    padding: .8rem 0 .7rem;
     background-color: var(--bc--primary--txt);
-    color: #fff;
     font-size: 4rem;
     line-height: 3.4rem;
     letter-spacing: 0.05em;
+    color: #fff;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 main{
-    min-width: 3.2rem;
     margin: 1.4rem 3.2rem 6rem;
 }
 
@@ -68,22 +57,17 @@ main p{
     line-height: 1.5rem;
     color: var(--fc--primary);
     margin-bottom: 6.3rem;
+
+}
+
+img{
+    width: 100%;
+    height: auto;
 }
 
 .card{
+    margin-bottom: 3.6rem;
     position: relative;
-}
-
-.card + .card{
-    margin-top: 3.6rem;
-}
-
-.card img{
-    min-height: 25rem;
-    object-fit: cover;
-    border-radius: 2rem;
-
-    animation: downtop 500ms linear 250ms reverse backwards;
 }
 
 .card h2{
@@ -91,18 +75,48 @@ main p{
     right: 1.6rem;
     top: 1.6rem;
 
-    font-size: clamp(1rem, 2rem + 1vw, 4rem);
+    font-size: 2rem;
     line-height: 3.4rem;
     letter-spacing: 0.05em;
-
     color: var(--fc--secondary);
+
+    padding: .1rem 2.4rem;
     background-color: var(--bc--secondary--txt);
     border-radius: 2rem;
 
-    padding: .1rem 2.4rem;
-
     animation: topdown 700ms linear 250ms both;
 }
+
+.card img{
+    object-fit: cover;
+    animation: downtop 500ms linear 250ms reverse backwards;
+}
+
+footer{
+    display: none;
+    font-family: 'Open Sans';
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: var(--fc--secondary);
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--fc--secondary);
+}
+
+footer a:hover{
+    font-weight: bold;
+}
+
+.card:nth-child(5){
+    display: none;
+}
+
+.card:nth-child(6){
+    display: none;
+}
+
 
 @keyframes topdown {
     0% {
@@ -125,3 +139,6 @@ main p{
               opacity: 0;
     }
   }
+
+
+
