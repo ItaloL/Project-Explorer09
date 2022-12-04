@@ -20,21 +20,26 @@
 }
 
 body{
-    max-width: 384px;
+    width: 100vw;
+    height: 100vh;
     font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     font-family: 'Staatliches', cursive;
     background-color: var(--bc-secondary)
 }
 
 header{
+    width: 100%;
     background-color: var(--bc--primary);
     padding: 3.2rem 0 2.9rem;
 }
 
 header img{
-    width: 13.7rem;
-    height: 13.7rem;
+    max-width: 21.4rem;
+    height: auto;
     animation: rotate-scale-down 0.65s linear both;
 }
 
@@ -48,6 +53,15 @@ header h1{
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
+header p {
+    display: none;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    color: #fff;
+    margin: 3.2rem 4.8rem 0 5.4rem;  
+}
+
 main{
     margin: 1.4rem 3.2rem 6rem;
 }
@@ -59,11 +73,6 @@ main p{
     color: var(--fc--primary);
     margin-bottom: 6.3rem;
 
-}
-
-img{
-    width: 100%;
-    height: auto;
 }
 
 .card{
@@ -89,6 +98,9 @@ img{
 }
 
 .card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
     object-fit: cover;
     transition: all 500ms;
     filter: blur(1px);
@@ -163,13 +175,101 @@ footer a:hover{
               transform: scale(1) rotateZ(360deg);
     }
   }
-  
 
 
+  @media (min-width: 950px){
+    body{
+        flex-direction: row;     
+    }
 
-  @media (min-width: 750px){
+    header{ 
+        height: 100vh; 
+        max-width: 37.7rem;
+    }
+
+    header h1{
+        font-size: 4.8rem;
+    }
+    
+    header p{
+        font-family: 'Roboto', sans-serif;
+        font-size: clamp(1rem, 1.2rem, 3rem);
+        line-height: 2rem;
+        display: block;
+    }
+
+    .page{
+        margin: 6.4rem auto;
+        padding: 6.4rem 2rem 0;
+        max-width: clamp(33rem, 30rem + 60vw, 128rem);
+        max-height: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+        "A"
+        "B";
+    }
+
+    footer{
+        grid-area: B;
+    }
+
+
+    main p{
+        display: none;
+    }
+
+    .card{
+        margin: 0;
+    }
+
+    .card h2{
+        display: none;
+    }
+
     main{
-        max-width: 128rem;
+        margin: 0;
+        grid-area: A;
+        display: grid;
+        grid-template-columns: 22rem 22rem 22rem;
+        grid-template-rows: 22rem 22rem 22rem;
+        grid-template-areas: 
+        "A B C"
+        "D B E"
+        "D F E";
+        gap: 3.2rem;
+    }
+
+    main .card:nth-child(1){
+        grid-area: A;
+    }
+
+    main .card:nth-child(2){
+        grid-area: B;
+    }
+
+    main .card:nth-child(3){
+        grid-area: C;
+    }
+
+    main .card:nth-child(4){
+        grid-area: D;
+    }
+
+    main .card:nth-child(5){
+        grid-area: E;
+        display: block;
+    }
+
+    main .card:nth-child(6){
+        grid-area: F;
+        display: block;
+    }
+
+    footer{
+        display: block;
+        margin-top: 4rem;
     }
   }
 
